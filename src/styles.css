@@ -1,0 +1,30 @@
+@import '../node_modules/sanitize.css/sanitize.css';
+@import '../node_modules/sanitize.css/typography.css';
+@import '../node_modules/sanitize.css/forms.css';
+
+#content {
+  height: 65vh;
+}
+nav {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+}
+ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.list-item {
+  margin-right: 2vw;
+  cursor: pointer;
+}
+
+#content-info-container {
+  position: absolute;
+  height: 70vh;
+  width: 100vw;
+  margin: auto;
+  background-size: 100% 100%;
+  z-index: -1;
+}
