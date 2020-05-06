@@ -1,8 +1,20 @@
-import backgroundImage from './content-background.jpg';
+import backgroundImage from './content-background.jpeg';
+import coffeeImage from './coffee.svg';
+import drinksImage from './drinks.svg';
+import fishImage from './fish.svg';
+import saladImage from './salad.svg';
+
+const content = document.querySelector('#content');
 
 const landingPage = () => {
-  const navBarItems = ['HOME', 'MENUS', 'RESERVATIONS', 'PRIVATE DINING', 'CONTACT'];
-  const content = document.querySelector('#content');
+  createMainDiv();
+  createSecondaryDiv();
+};
+
+const createMainDiv = () => {
+  const mainDiv = document.createElement('div');
+  mainDiv.id = 'main-div';
+  const navBarItems = ['HOME', 'MENUS', 'RESERVATIONS', 'PRIVATE DINING', 'CONTACT US'];
   // navBar creation
   const navBar = document.createElement('nav');
   const ul = document.createElement('ul');
@@ -12,13 +24,54 @@ const landingPage = () => {
     listItem.classList.add('list-item');
     ul.appendChild(listItem);
   }
+  //background image via css
+  const background = document.createElement('div');
+  background.id = 'background';
+  background.style.backgroundImage = `url('${backgroundImage}')`;
+
+  // div for modules to be inserted
+  const moduleDiv = document.createElement('div');
+  moduleDiv.id = 'module-div';
+
+  const intro = document.createElement('h1');
+  // 'We even have cashews as decoration!' + '\r\n' + '    We can cook anything!';
+  intro.textContent = `We even have cashews as decoration!
+      We can cook anything you want!`;
+  intro.id = 'intro';
+
   navBar.appendChild(ul);
-  //Content info (background image and general info)
-  const contentInfoContainer = document.createElement('div');
-  contentInfoContainer.id = 'content-info-container';
-  contentInfoContainer.style.backgroundImage = `url('${backgroundImage}')`;
-  content.appendChild(contentInfoContainer);
-  content.appendChild(navBar);
+  moduleDiv.appendChild(intro);
+  mainDiv.append(background, navBar, moduleDiv);
+  content.appendChild(mainDiv);
+};
+
+const createSecondaryDiv = () => {
+  const secondaryDiv = document.createElement('div');
+  secondaryDiv.id = 'secondary-div';
+
+  const tabItems = ['Drinks', 'Sea Foods', 'Cup Coffees', 'Fresh Salad'];
+  const tabImages = [drinksImage, fishImage, coffeeImage, saladImage];
+  const tabInfo = [
+    'Best drinks within 10 meters!',
+    'We stole them from bears!',
+    'Basic starbucks stuff',
+    'It is fresh enough to eat!',
+  ];
+
+  for (let i = 0; i < tabItems.length; i++) {
+    const div = document.createElement('div');
+    const image = document.createElement('img');
+    const title = document.createElement('h4');
+    const info = document.createElement('p');
+
+    div.classList.add('secondary-items');
+    image.src = tabImages[i];
+    title.textContent = tabItems[i];
+    info.textContent = tabInfo[i];
+    div.append(image, title, info);
+    secondaryDiv.append(div);
+  }
+  content.appendChild(secondaryDiv);
 };
 
 export { landingPage };
