@@ -28,6 +28,7 @@ const createMainDiv = () => {
   const background = document.createElement('div');
   background.id = 'background';
   background.style.backgroundImage = `url('${backgroundImage}')`;
+  background.classList.add('active');
 
   // div for modules to be inserted
   const moduleDiv = document.createElement('div');
