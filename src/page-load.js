@@ -28,7 +28,6 @@ const createMainDiv = () => {
   //background image via css
   const background = document.createElement('div');
   background.id = 'background';
-  // background.style.backgroundImage = `url('${backgroundImage}')`;
   background.classList.add('run-animation');
 
   // div for modules to be inserted
@@ -37,10 +36,6 @@ const createMainDiv = () => {
   moduleDiv.classList.add('run-animation');
 
   const intro = document.createElement('h1');
-  // 'We even have cashews as decoration!' + '\r\n' + '    We can cook anything!';
-  // intro.textContent = `We even have cashews as decoration!
-  //     We can cook anything you want!`;
-  // intro.id = 'intro';
 
   navBar.appendChild(ul);
   moduleDiv.appendChild(intro);
