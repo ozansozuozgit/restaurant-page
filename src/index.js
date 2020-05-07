@@ -7,14 +7,14 @@ import './styles.css';
 const tabAnimation = () => {
   const moduleDiv = document.querySelector('#module-div');
   const background = document.querySelector('#background');
-  // Used in conjuction with css, toggles from 0 opacity to 1, when active opacity is 1
-  // By default elements are set to 0 opacity
-  moduleDiv.classList.toggle('active');
-  background.classList.toggle('active');
-  setTimeout(function () {
-    moduleDiv.classList.toggle('active');
-    background.classList.toggle('active');
-  }, 200);
+
+  background.classList.toggle('run-animation');
+  void background.offsetWidth;
+  background.classList.toggle('run-animation');
+
+  moduleDiv.classList.toggle('run-animation');
+  void moduleDiv.offsetWidth;
+  moduleDiv.classList.toggle('run-animation');
 };
 
 landingPage();

@@ -28,12 +28,12 @@ const createMainDiv = () => {
   const background = document.createElement('div');
   background.id = 'background';
   background.style.backgroundImage = `url('${backgroundImage}')`;
-  background.classList.add('active');
+  background.classList.add('run-animation');
 
   // div for modules to be inserted
   const moduleDiv = document.createElement('div');
   moduleDiv.id = 'module-div';
-  moduleDiv.classList.add('active');
+  moduleDiv.classList.add('run-animation');
 
   const intro = document.createElement('h1');
   // 'We even have cashews as decoration!' + '\r\n' + '    We can cook anything!';

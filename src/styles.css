@@ -50,17 +50,16 @@ ul {
   height: 100%;
   background-size: 100% 100%;
   z-index: -1;
-  opacity: 0;
 }
 #module-div {
   height: 85%;
   display: flex;
-  opacity: 0;
 }
-.active {
-  opacity: 1 !important;
-  transition: opacity 0.4s ease-in;
+.run-animation {
+  position: relative;
+  animation: my-animation 1.5s ease;
 }
+
 
 #intro {
   align-self: center;
@@ -134,3 +133,15 @@ ul {
   margin: auto;
   border-radius: 5px;
 }
+
+@keyframes my-animation {
+  from {
+    opacity: 0;
+    left: -500px;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+
