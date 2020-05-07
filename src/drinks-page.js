@@ -6,7 +6,6 @@ const drinksTab = () => {
   moduleDiv.innerHTML = `<img id='menu' src=${drinksMenu}>`;
   const background = document.querySelector('#background');
   background.style.backgroundImage = `url('${barBackground}')`;
-
 };
 
 export { drinksTab };
