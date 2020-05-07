@@ -32,6 +32,7 @@ const createMainDiv = () => {
   // div for modules to be inserted
   const moduleDiv = document.createElement('div');
   moduleDiv.id = 'module-div';
+  moduleDiv.classList.add('active');
 
   const intro = document.createElement('h1');
   // 'We even have cashews as decoration!' + '\r\n' + '    We can cook anything!';
@@ -65,6 +66,7 @@ const createSecondaryDiv = () => {
     const info = document.createElement('p');
 
     div.classList.add('secondary-items');
+    div.setAttribute('data-tab', i);
     image.src = tabImages[i];
     title.textContent = tabItems[i];
     info.textContent = tabInfo[i];

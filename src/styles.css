@@ -114,3 +114,16 @@ ul {
   height: 30%;
   color: darkgray;
 }
+
+.secondary-items > img,
+.secondary-items > h4,
+.secondary-items > p {
+  pointer-events: none;
+}
+
+#menu {
+  height: 90%;
+  width: 50%;
+  margin: auto;
+  border-radius: 5px;
+}
