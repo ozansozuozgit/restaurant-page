@@ -1,4 +1,4 @@
-import { landingPage } from './page-load';
+import { landingPage, homeTab } from './page-load';
 import { drinksTab } from './drinks-page';
 import { seaFoodsTab } from './seafoods-page';
 import { coffeeTab } from './coffee-page';
@@ -18,9 +18,14 @@ const tabAnimation = () => {
   void moduleDiv.offsetWidth;
   moduleDiv.classList.toggle('run-animation');
 };
+
 // Start page
 landingPage();
 
+// Home button
+document.querySelectorAll('.list-item')[0].addEventListener('click', () => homeTab());
+
+//Tabs
 document.querySelectorAll('.secondary-items').forEach((tab) => {
   tab.addEventListener('click', (e) => {
     const tabNumber = e.target.dataset.tab;
@@ -39,7 +44,7 @@ document.querySelectorAll('.secondary-items').forEach((tab) => {
         saladTab();
         break;
       default:
-        drinksTab();
+        homeTab();
     }
   });
 });
